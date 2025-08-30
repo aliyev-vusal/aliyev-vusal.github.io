@@ -423,3 +423,41 @@ section {
     font-weight: 500;
     color: #45505b;
 }
+
+
+/* Certifications list */
+
+.cert-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0 0 20px 0;
+}
+
+.cert-list li {
+    margin: 0 0 14px 0;
+}
+
+.cert-list a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.cert-list a:hover {
+    color: var(--brand);
+    text-decoration: none;
+}
+
+.cert-list img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.cert-list small {
+    display: block;
+    color: #6b7785;
+    margin-left: 32px;
+}
