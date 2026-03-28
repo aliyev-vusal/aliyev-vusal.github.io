@@ -37,47 +37,38 @@
     /* Language Switcher */
     .lang-switcher {
       position: fixed;
-      top: 14px;
-      right: 18px;
-      z-index: 9999;
+      bottom: 70px;
+      right: 15px;
+      z-index: 99998;
       display: flex;
+      flex-direction: column;
       gap: 6px;
     }
 
     .lang-btn {
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      color: #fff;
+      background: #fff;
+      border: 2px solid #0563bb;
+      color: #0563bb;
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 0.5px;
-      padding: 4px 10px;
+      padding: 5px 10px;
       border-radius: 20px;
       cursor: pointer;
-      backdrop-filter: blur(6px);
-      transition: background 0.25s, color 0.25s, border-color 0.25s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      transition: background 0.2s, color 0.2s;
+      width: 40px;
+      text-align: center;
     }
 
     .lang-btn:hover {
-      background: rgba(255, 255, 255, 0.28);
-    }
-
-    .lang-btn.active {
-      background: #149ddd;
-      border-color: #149ddd;
+      background: #0563bb;
       color: #fff;
     }
 
-    @media (max-width: 768px) {
-      .lang-switcher {
-        top: 8px;
-        right: 56px;
-      }
-
-      .lang-btn {
-        font-size: 11px;
-        padding: 3px 8px;
-      }
+    .lang-btn.active {
+      background: #0563bb;
+      color: #fff;
     }
   </style>
 </head>
@@ -114,7 +105,7 @@
   <section id="hero" class="d-flex flex-column justify-content-center">
     <div class="container" data-aos="zoom-in" data-aos-delay="40">
       <h1>Vusal Aliyev</h1>
-      <p><span class="typed" id="typed-el"></span></p>
+      <p><span id="typed-el"></span></p>
 
       <div class="social-links">
         <a href="https://github.com/aliyev-vusal" target="_blank" rel="noopener" class="github" aria-label="GitHub">
@@ -256,7 +247,7 @@
 
             <div class="resume-item">
               <h4 data-i18n="job1_title">Industriepraktikant — AKIPAS-Projekt</h4>
-              <h5>Mai 2025 – Jan 2026</h5>
+              <h5 data-i18n="job1_period">Mai 2025 – Jan 2026</h5>
               <p class="font-italic">Rogers Corporation (AES – Advanced Electronics Solutions), Eschenbach i.d. OPf, Germany</p>
               <ul>
                 <li data-i18n="job1_b1">Mitarbeit am Forschungsprojekt „AKIPAS – Augmented AI-Module für Produktionsassistenzsysteme in der integrierten Fertigung metallisierter Keramiksubstrate für die Leistungselektronik".</li>
@@ -283,7 +274,7 @@
 
             <div class="resume-item">
               <h4 data-i18n="job3_title">Werkstudent — Digitalisierung &amp; IT</h4>
-              <h5>Mrz 2024 – Mrz 2025</h5>
+              <h5 data-i18n="job3_period">Mrz 2024 – Mrz 2025</h5>
               <p class="font-italic">Schaeffler Technologies, Herzogenaurach, Germany</p>
               <ul>
                 <li data-i18n="job3_b1">Teil des Teams Connectivity &amp; Process Control Solutions im Industrial Engineering.</li>
@@ -296,7 +287,7 @@
 
             <div class="resume-item">
               <h4 data-i18n="job4_title">Werkstudent — DigiOps für Digital &amp; Automation</h4>
-              <h5>Feb 2023 – Mrz 2024</h5>
+              <h5 data-i18n="job4_period">Feb 2023 – Mrz 2024</h5>
               <p class="font-italic">Siemens Healthineers, Forchheim, Germany</p>
               <ul>
                 <li data-i18n="job4_b1">Unterstützung der DigiOps-Abteilungen für Digital &amp; Automation (Service Sales &amp; Transformation).</li>
@@ -309,7 +300,7 @@
 
             <div class="resume-item">
               <h4 data-i18n="job5_title">Datenqualitätsanalyst</h4>
-              <h5>Jan 2017 – Okt 2019</h5>
+              <h5 data-i18n="job5_period">Jan 2017 – Okt 2019</h5>
               <p class="font-italic">State Statistical Committee of Azerbaijan Republic, Baku, Azerbaijan</p>
               <ul>
                 <li data-i18n="job5_b1">Erhebung, Validierung und Analyse von Dienstleistungsstatistiken auf nationaler Ebene.</li>
@@ -322,7 +313,7 @@
 
             <div class="resume-item">
               <h4 data-i18n="job6_title">Praktikant</h4>
-              <h5>Jun 2015 – Jul 2016</h5>
+              <h5 data-i18n="job6_period">Jun 2015 – Jul 2016</h5>
               <p class="font-italic">Amrahbank, Goranboy District, Azerbaijan</p>
               <ul>
                 <li data-i18n="job6_b1">Unterstützung des Geschäftsbetriebs und der Verarbeitung von Finanzdaten.</li>
@@ -339,7 +330,7 @@
 
             <div class="resume-item">
               <h4 data-i18n="edu1_title">M.Sc. Internationales Informationssystemmanagement</h4>
-              <h5>Okt 2023 – Okt 2025</h5>
+              <h5 data-i18n="edu1_period">Okt 2023 – Okt 2025</h5>
               <p class="font-italic">Otto-Friedrich-Universität Bamberg, Germany</p>
               <ul>
                 <li data-i18n="edu1_b1">Masterstudium mit Schwerpunkt Informationssysteme, Data Science und Business Intelligence.</li>
@@ -350,7 +341,7 @@
 
             <div class="resume-item">
               <h4 data-i18n="edu2_title">B.Sc. Informationssysteme</h4>
-              <h5>Okt 2021 – Okt 2023</h5>
+              <h5 data-i18n="edu2_period">Okt 2021 – Okt 2023</h5>
               <p class="font-italic">Otto-Friedrich-Universität Bamberg, Germany</p>
               <ul>
                 <li data-i18n="edu2_b1">Angewandtes Wissen in Datenbanken, Programmierung, Cloud Computing und Optimierung.</li>
@@ -360,7 +351,7 @@
 
             <div class="resume-item">
               <h4 data-i18n="edu3_title">B.Sc. Wirtschaftswissenschaften</h4>
-              <h5>Okt 2009 – Jun 2013</h5>
+              <h5 data-i18n="edu3_period">Okt 2009 – Jun 2013</h5>
               <p class="font-italic">Azerbaijan State University of Economics (UNEC), Baku, Azerbaijan</p>
               <ul>
                 <li data-i18n="edu3_b1">Bachelorabschluss in Wirtschaftswissenschaften mit Schwerpunkt Management und Geschäftsprozesse.</li>
@@ -605,6 +596,7 @@
         resume_education: "Bildung",
         resume_certs: "Zertifikate",
         job1_title: "Industriepraktikant — AKIPAS-Projekt",
+        job1_period: "Mai 2025 – Jan 2026",
         job1_b1: "Mitarbeit am Forschungsprojekt „AKIPAS – Augmented AI-Module für Produktionsassistenzsysteme in der integrierten Fertigung metallisierter Keramiksubstrate für die Leistungselektronik".",
         job1_b2: "Erhebung und Bereinigung von Daten aus primären und sekundären Quellen für Analytics- und KI-Anwendungsfälle.",
         job1_b3: "Aufbau und Pflege eines DBMS; Migration vorhandener Produktionsdaten in das neue System.",
@@ -619,36 +611,43 @@
         job2_b4: "Mitwirkung bei der Erstellung akademischer Publikationen und internem Reporting.",
         job2_b5: "Arbeit mit Programmiertools (Python, R) und IT-Projektmanagementaufgaben.",
         job3_title: "Werkstudent — Digitalisierung & IT",
+        job3_period: "Mrz 2024 – Mrz 2025",
         job3_b1: "Teil des Teams Connectivity & Process Control Solutions im Industrial Engineering.",
         job3_b2: "Beitrag zu Digitalisierungs- und Industrie-4.0-Initiativen durch Integration von IT/OT-Systemen.",
         job3_b3: "Entwurf und Standardisierung von Dashboards mit Power BI und Python.",
         job3_b4: "Verbesserung von Datenverwaltungsprozessen und Reporting-Workflows.",
         job3_b5: "Zusammenarbeit mit funktionsübergreifenden Teams zur Implementierung digitaler Lösungen in der Produktion.",
         job4_title: "Werkstudent — DigiOps für Digital & Automation",
+        job4_period: "Feb 2023 – Mrz 2024",
         job4_b1: "Unterstützung der DigiOps-Abteilungen für Digital & Automation (Service Sales & Transformation).",
         job4_b2: "Erstellung von Dashboards und automatisierten Berichten mit Power BI, Excel (Pivot, VBA) und SAP.",
         job4_b3: "Durchführung statistischer Analysen, Abweichungsberichte und Sicherstellung der Datenqualität.",
         job4_b4: "Cloud-Computing und Datenintegration für Produktionstransformationsprojekte eingesetzt.",
         job4_b5: "Unterstützung agiler Teams in digitalen Projekten und Beitrag zu Optimierungsinitiativen.",
         job5_title: "Datenqualitätsanalyst",
+        job5_period: "Jan 2017 – Okt 2019",
         job5_b1: "Erhebung, Validierung und Analyse von Dienstleistungsstatistiken auf nationaler Ebene.",
         job5_b2: "Entwurf und Pflege von Datenbanken für zuverlässiges statistisches Reporting.",
         job5_b3: "Qualitätssicherung und Identifikation von Inkonsistenzen in großen Datensätzen.",
         job5_b4: "Erstellung statistischer Berichte für Regierung und Stakeholder.",
         job5_b5: "Sicherstellung der Einhaltung internationaler Standards für Datenverwaltung und Reporting.",
         job6_title: "Praktikant",
+        job6_period: "Jun 2015 – Jul 2016",
         job6_b1: "Unterstützung des Geschäftsbetriebs und der Verarbeitung von Finanzdaten.",
         job6_b2: "Arbeit mit der Bankensoftware Temenos T24 für Dateneingabe und Reporting.",
         job6_b3: "Unterstützung der Filialmitarbeiter bei Kontoverwaltung und Kundendienstprozessen.",
         job6_b4: "Erste Einblicke in finanzielle IT-Systeme und Reporting-Tools gewonnen.",
         edu1_title: "M.Sc. Internationales Informationssystemmanagement",
+        edu1_period: "Okt 2023 – Okt 2025",
         edu1_b1: "Masterstudium mit Schwerpunkt Informationssysteme, Data Science und Business Intelligence.",
         edu1_b2: "Kompetenzen: Experimentelles Design, Business Intelligence, Python, R, Optimierung, Projektplanung, Cloud Computing, Git.",
         edu1_b3: "Ausgebaute Kompetenzen in Data Science, Projektmanagement, Datenbanken und Management.",
         edu2_title: "B.Sc. Informationssysteme",
+        edu2_period: "Okt 2021 – Okt 2023",
         edu2_b1: "Angewandtes Wissen in Datenbanken, Programmierung, Cloud Computing und Optimierung.",
         edu2_b2: "Gestärkte Kenntnisse in Englisch, Datenanalyse und Projektmanagement.",
         edu3_title: "B.Sc. Wirtschaftswissenschaften",
+        edu3_period: "Okt 2009 – Jun 2013",
         edu3_b1: "Bachelorabschluss in Wirtschaftswissenschaften mit Schwerpunkt Management und Geschäftsprozesse.",
         edu3_b2: "Grundlagen in Wirtschaftsanalyse, Statistik und Organisationsmanagement erworben.",
         cert1_info: "Ausgestellt Dez 2025 • Credential ID: 9282D54B6D4C7883 • Kenntnisse: Microsoft Fabric, Data Engineering, Data Pipelines, ETL, Data Integration, Lakehouse, Data Warehousing, SQL, Big Data, Cloud Data Platforms",
@@ -685,6 +684,7 @@
         resume_education: "Education",
         resume_certs: "Certifications",
         job1_title: "Industrial Engineering Intern — AKIPAS Project",
+        job1_period: "May 2025 – Jan 2026",
         job1_b1: "Working on the research project \"AKIPAS – Augmented AI modules for production assistance systems in integrated manufacturing of metallized ceramic substrates for power electronics.\"",
         job1_b2: "Acquired and cleaned data from primary and secondary sources for analytics and AI use cases.",
         job1_b3: "Built and maintained a DBMS; migrated existing production data into the new system.",
@@ -699,36 +699,43 @@
         job2_b4: "Assisted in preparing academic publications and internal reporting.",
         job2_b5: "Worked with programming tools (Python, R) and IT project management tasks.",
         job3_title: "Working Student — Digitalization & IT",
+        job3_period: "Mar 2024 – Mar 2025",
         job3_b1: "Part of the Connectivity & Process Control Solutions team in Industrial Engineering.",
         job3_b2: "Contributed to digitalization and Industry 4.0 initiatives by integrating IT/OT systems.",
         job3_b3: "Designed and standardized dashboards using Power BI and Python.",
         job3_b4: "Improved data management processes and reporting workflows.",
         job3_b5: "Collaborated with cross-functional teams to implement digital solutions in production.",
         job4_title: "Working Student — DigiOps for Digital & Automation",
+        job4_period: "Feb 2023 – Mar 2024",
         job4_b1: "Supported the DigiOps for Digital & Automation departments (Service Sales & Transformation).",
         job4_b2: "Created dashboards and automated reports using Power BI, Excel (Pivot, VBA), and SAP.",
         job4_b3: "Performed statistical analyses, variance reports, and ensured data accuracy and quality.",
         job4_b4: "Applied cloud computing and data integration for production transformation projects.",
         job4_b5: "Supported agile teams in digital projects, contributing to optimization initiatives.",
         job5_title: "Data Quality Analyst",
+        job5_period: "Jan 2017 – Oct 2019",
         job5_b1: "Collected, validated, and analyzed service statistics data at a national level.",
         job5_b2: "Designed and maintained databases for reliable statistical reporting.",
         job5_b3: "Conducted quality assurance and identified inconsistencies in large datasets.",
         job5_b4: "Prepared statistical reports for government and stakeholders.",
         job5_b5: "Ensured compliance with international standards of data management and reporting.",
         job6_title: "Intern",
+        job6_period: "Jun 2015 – Jul 2016",
         job6_b1: "Assisted in business operations and financial data handling.",
         job6_b2: "Worked with Temenos T24 banking software for data entry and reporting.",
         job6_b3: "Supported branch staff in account management and customer service processes.",
         job6_b4: "Gained initial exposure to financial IT systems and reporting tools.",
         edu1_title: "M.Sc. International Information Systems Management",
+        edu1_period: "Oct 2023 – Oct 2025",
         edu1_b1: "Master's degree focused on Information Systems, Data Science, and Business Intelligence.",
         edu1_b2: "Skills: Experimental Design, Business Intelligence, Python, R, Optimization, Project Planning, Cloud Computing, Git.",
         edu1_b3: "Developed competencies in Data Science, Project Management, Databases, and Management.",
         edu2_title: "B.Sc. Information Systems",
+        edu2_period: "Oct 2021 – Oct 2023",
         edu2_b1: "Applied knowledge in Databases, Programming, Cloud Computing, and Optimization.",
         edu2_b2: "Strengthened skills in English, Data Analysis, and Project Management.",
         edu3_title: "B.Sc. Economics",
+        edu3_period: "Oct 2009 – Jun 2013",
         edu3_b1: "Bachelor's degree in Economics with a focus on Management and Business Processes.",
         edu3_b2: "Developed foundation in economic analysis, statistics, and organizational management.",
         cert1_info: "Issued Dec 2025 • Credential ID: 9282D54B6D4C7883 • Skills: Microsoft Fabric, Data Engineering, Data Pipelines, ETL, Data Integration, Lakehouse, Data Warehousing, SQL, Big Data, Cloud Data Platforms",
@@ -765,6 +772,7 @@
         resume_education: "Təhsil",
         resume_certs: "Sertifikatlar",
         job1_title: "Sənaye Mühəndisliyi Praktikantı — AKIPAS Layihəsi",
+        job1_period: "May 2025 – Yan 2026",
         job1_b1: "\"AKIPAS – Güc elektronikası üçün metal örtüklü keramik substratların inteqrasiya olunmuş istehsalında istehsal yardım sistemləri üçün Artırılmış AI modulları\" tədqiqat layihəsində iştirak.",
         job1_b2: "Analytics və AI istifadə halları üçün birincil və ikincil mənbələrdən məlumatların toplanması və təmizlənməsi.",
         job1_b3: "DBMS-in qurulması və saxlanılması; mövcud istehsal məlumatlarının yeni sistemə köçürülməsi.",
@@ -779,36 +787,43 @@
         job2_b4: "Akademik nəşrlərin hazırlanmasında və daxili hesabatda iştirak.",
         job2_b5: "Proqramlaşdırma alətləri (Python, R) və İT layihə idarəetməsi tapşırıqları ilə iş.",
         job3_title: "İşçi Tələbə — Rəqəmselləşmə & İT",
+        job3_period: "Mar 2024 – Mar 2025",
         job3_b1: "Sənaye Mühəndisliyindəki Əlaqəlilik & Proses Nəzarəti Həlləri komandasının üzvü.",
         job3_b2: "İT/OT sistemlərinin inteqrasiyası ilə rəqəmselləşmə və Sənaye 4.0 təşəbbüslərinə töhfə.",
         job3_b3: "Power BI və Python istifadə edərək tabloların layihələndirilməsi və standartlaşdırılması.",
         job3_b4: "Məlumat idarəetmə proseslərinin və hesabatlıq iş axınlarının təkmilləşdirilməsi.",
         job3_b5: "İstehsalda rəqəmsal həllərin tətbiqi üçün çarpaz funksiyalı komandalarla əməkdaşlıq.",
         job4_title: "İşçi Tələbə — Rəqəmsal & Avtomatlaşdırma üçün DigiOps",
+        job4_period: "Fev 2023 – Mar 2024",
         job4_b1: "Rəqəmsal & Avtomatlaşdırma üçün DigiOps şöbələrinə dəstək (Xidmət Satışı & Transformasiya).",
         job4_b2: "Power BI, Excel (Pivot, VBA) və SAP istifadə edərək tabloların və avtomatlaşdırılmış hesabatların yaradılması.",
         job4_b3: "Statistik analizlərin, dispersiya hesabatlarının aparılması və məlumat dəqiqliyi və keyfiyyətinin təmin edilməsi.",
         job4_b4: "İstehsal transformasiya layihələri üçün bulud hesablama və məlumat inteqrasiyasının tətbiqi.",
         job4_b5: "Rəqəmsal layihələrdə çevik komandaların dəstəklənməsi, optimallaşdırma təşəbbüslərinə töhfə.",
         job5_title: "Məlumat Keyfiyyəti Analitiki",
+        job5_period: "Yan 2017 – Okt 2019",
         job5_b1: "Milli səviyyədə xidmət statistikası məlumatlarının toplanması, yoxlanılması və təhlili.",
         job5_b2: "Etibarlı statistik hesabatlıq üçün verilənlər bazalarının layihələndirilməsi və saxlanılması.",
         job5_b3: "Böyük məlumat dəstlərindəki uyğunsuzluqların keyfiyyət yoxlaması və müəyyən edilməsi.",
         job5_b4: "Hökumət və maraqlı tərəflər üçün statistik hesabatların hazırlanması.",
         job5_b5: "Məlumat idarəetməsi və hesabatlığının beynəlxalq standartlarına uyğunluğun təmin edilməsi.",
         job6_title: "Praktikant",
+        job6_period: "İyn 2015 – İyl 2016",
         job6_b1: "İşgüzar əməliyyatlarda və maliyyə məlumatlarının işlənməsində yardım.",
         job6_b2: "Məlumat daxiletmə və hesabatlıq üçün Temenos T24 bank proqramı ilə iş.",
         job6_b3: "Filial işçilərinə hesab idarəetməsi və müştəri xidməti proseslərində dəstək.",
         job6_b4: "Maliyyə İT sistemləri və hesabatlıq alətləri ilə ilkin tanışlıq əldə edildi.",
         edu1_title: "M.Sc. Beynəlxalq İnformasiya Sistemləri İdarəetməsi",
+        edu1_period: "Okt 2023 – Okt 2025",
         edu1_b1: "İnformasiya Sistemləri, Data Science və Business Intelligence-ə fokuslanmış magistr dərəcəsi.",
         edu1_b2: "Bacarıqlar: Eksperimental dizayn, Business Intelligence, Python, R, Optimizasiya, Layihə planlaması, Bulud hesablama, Git.",
         edu1_b3: "Data Science, Layihə İdarəetməsi, Verilənlər Bazaları və İdarəetmə üzrə səriştə inkişaf etdirildi.",
         edu2_title: "B.Sc. İnformasiya Sistemləri",
+        edu2_period: "Okt 2021 – Okt 2023",
         edu2_b1: "Verilənlər Bazaları, Proqramlaşdırma, Bulud Hesablama və Optimizasiyada tətbiqi bilik.",
         edu2_b2: "İngilis dili, Məlumat Təhlili və Layihə İdarəetməsi üzrə gücləndirilmiş bacarıqlar.",
         edu3_title: "B.Sc. İqtisadiyyat",
+        edu3_period: "Okt 2009 – İyn 2013",
         edu3_b1: "İdarəetmə və Biznes Proseslərinə fokuslanmış İqtisadiyyat üzrə bakalavr dərəcəsi.",
         edu3_b2: "İqtisadi analiz, statistika və təşkilati idarəetmə üzrə əsas bilik əldə edildi.",
         cert1_info: "Verilmə tarixi: Dek 2025 • Credential ID: 9282D54B6D4C7883 • Bacarıqlar: Microsoft Fabric, Data Engineering, Data Pipelines, ETL, Data Integration, Lakehouse, Data Warehousing, SQL, Big Data, Cloud Data Platforms",
